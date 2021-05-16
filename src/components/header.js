@@ -3,12 +3,24 @@ import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import styled from 'styled-components'
 import { FaBars } from 'react-icons/fa'
- 
+import { MenuItems } from './data/MenuItems'
+import { Button } from './Button' 
+
 const Header = () => {
+  
   return(
     <Nav>
       <NavLink to ='/'>Javatars</NavLink>
       <Bars/>
+      <NavMenu>
+        {MenuItems.map((item, index) => (
+          <NavLink to={item.link} key={index}>{item.title}</NavLink>
+        ))}
+      </NavMenu>
+      <NavBtn>
+        <Button primary="true" round="true" to="/trips">Book a flight</Button>
+      </NavBtn>
+      
     </Nav>
   )
 
@@ -42,7 +54,7 @@ const Bars = styled(FaBars)`
 display: none;
 color:#fff;
 
-@media screen and (max-width: 760px){
+@media screen and (max-width: 768px){
   display: block;
   position: absolute; 
   top: 0;
@@ -53,4 +65,26 @@ color:#fff;
 }
 `
 
+const NavMenu = styled.div`
+display: flex;
+align-items: center;
+padding-right: 20px;
+
+@media screen and (max-width: 768px){
+  display:none;
+}
+
+
+`
+
+
+const NavBtn = styled.div`
+display: flex;
+align-items: center;
+margin-right: 24px;
+
+@media screen and (max-width: 768px){
+  display:none;
+}
+`
 
