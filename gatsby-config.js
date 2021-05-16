@@ -1,12 +1,13 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    title: `Javatars`,
+    description: `Find cheap last minute travel deals from over 2000 providers. We help customers across the UK make smarter journeys every day!`,
     author: `@gatsbyjs`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
+    `gatbsy-plugin-styled-components`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
